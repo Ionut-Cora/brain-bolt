@@ -12,4 +12,13 @@
 
 body {
     font-family: "Roboto", sans-serif;
+    background-image: url(../images/background-image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
 }
