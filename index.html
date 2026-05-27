@@ -32,17 +32,47 @@
   <body>
     <!-- Header Section -->
     <header>
-        <div class="logo-div">
-            <i class="fa-solid fa-brain"></i>
-            <span>BrainBolt</span>
-        </div>
+      <div class="logo-div">
+        <i class="fa-solid fa-brain"></i>
+        <span>BrainBolt</span>
+      </div>
     </header>
 
+    <main>
+      <!-- Start Section -->
+      <section class="card" id="start-section">
+        <h1>Start BrainBolt Quiz</h1>
 
+        <form id="start-form">
+          <label for="player-name">Your name</label>
+          <input type="text" id="player-name" placeholder="Enter your name" />
+
+          <label for="question-count">Number of questions</label>
+          <select id="question-count">
+            <option value="3">3 questions</option>
+            <option value="6">6 questions</option>
+            <option value="9">9 questions</option>
+          </select>
+
+          <label for="difficulty-level">Difficulty</label>
+          <select id="difficulty-level">
+            <option value="easy">Beginner</option>
+            <option value="medium">Intermediate</option>
+            <option value="hard">Hard</option>
+          </select>
+          <div class="btn-div">
+            <button type="submit">Start</button>
+          </div>
+        </form>
+
+        <!-- Error or loading messages appear here -->
+        <p id="message-text"></p>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>copyright &copy; BrainBolt 2026</p>
+      <p>copyright &copy; BrainBolt 2026</p>
     </footer>
 
     <!-- Custom JavaScript -->
