@@ -23,7 +23,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+/* Header and Footer */
 
 .logo-div {
     display: flex;
@@ -41,12 +41,14 @@ body {
     font-weight: bold;
 }
 
-header {
+header,
+footer {
     text-align: center;
     padding: 1rem;
 }
 
 header span,
-header p {
+header p,
+footer p {
     color: #ffffff;
 }
