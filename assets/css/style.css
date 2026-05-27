@@ -22,3 +22,31 @@ body {
     min-height: 100vh;
     line-height: 1.6;
 }
+
+/* Header */
+
+.logo-div {
+    display: flex;
+    align-items: center;
+}
+
+.logo-div i {
+    margin-right: 0.5rem;
+    color: #e79638;
+    font-size: 2em;
+}
+
+.logo-div span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    padding: 1rem;
+}
+
+header span,
+header p {
+    color: #ffffff;
+}
