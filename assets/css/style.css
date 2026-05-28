@@ -131,6 +131,31 @@ button:hover {
     opacity: 0.85;
 }
 
+/* Quiz section */
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#question-image {
+    width: 100%;
+    max-height: 330px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    background: #ffffff;
+}
+
+#answers-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
 .hidden {
     display: none;
 }
