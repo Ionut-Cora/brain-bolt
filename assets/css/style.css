@@ -131,7 +131,16 @@ button:hover {
     opacity: 0.85;
 }
 
-/* Quiz section */
+/* Message Text */
+
+#message-text {
+    color: #e79638;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Quiz Section */
 
 .quiz-info {
     display: flex;
