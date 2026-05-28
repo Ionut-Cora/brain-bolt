@@ -195,3 +195,9 @@ button:hover {
         width: 80%;
     }
 }
+
+@media screen and (max-width: 650px) {
+    .quiz-info {
+        display: block;
+    }
+}
