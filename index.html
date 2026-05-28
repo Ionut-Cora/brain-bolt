@@ -69,6 +69,35 @@
           <!-- Error or loading messages appear here -->
           <p id="message-text"></p>
         </section>
+
+        <!-- Quiz Section -->
+        <section class="card hidden" id="quiz-section">
+          <div class="quiz-info">
+            <p>
+              Question: <span id="question-number">0</span>/<span
+                id="total-questions"
+                >0</span
+              >
+            </p>
+            <p>Score: <span id="score">0</span></p>
+            <p>Time: <span id="time">20</span>s</p>
+          </div>
+
+          <img id="question-image" src="" alt="Question image" />
+
+          <h2 id="question"></h2>
+
+          <div id="answers-content"></div>
+
+          <!-- Feedback after the answer -->
+          <div id="feedback-section" class="hidden">
+            <h3 id="feedback-title"></h3>
+            <p id="feedback-text"></p>
+            <div class="btn-div">
+              <button id="next-btn" type="button">Next</button>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 

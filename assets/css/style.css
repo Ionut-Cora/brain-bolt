@@ -131,6 +131,10 @@ button:hover {
     opacity: 0.85;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1200px) {
