@@ -156,6 +156,13 @@ button:hover {
     width: 100%;
 }
 
+/* Feedback Section */
+
+#feedback-section {
+    width: 100%;
+    border-radius: 1rem;
+}
+
 .hidden {
     display: none;
 }
