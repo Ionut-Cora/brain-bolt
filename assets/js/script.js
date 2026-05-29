@@ -1,4 +1,6 @@
 // Game Variables
+const unsplashKey = "kmUnvx5aKXe0KanJb7OVWQrdXu3iEF94T_NUMa-3kzY";
+
 const startSection = document.getElementById("start-section");
 const startForm = document.getElementById("start-form");
 const playerNameInput = document.getElementById("player-name");
@@ -28,6 +30,12 @@ const startQuiz = async (event) => {
 
   if (playerName.length < 1) {
     messageText.textContent = "Please enter at least 1 characters for your name.";
+    return;
+  }
+
+  if (unsplashKey === "") {
+    messageText.textContent =
+      "Please add your Unsplash API key in assets/js/app.js.";
     return;
   }
 
@@ -98,4 +106,30 @@ const showQuestion = async () => {
   });
 
   startTimer();
+};
+
+// Get Image (Unsplash API)
+const getImage = async (question, correctAnswer) => {
+  const keyword = `${cleanText(correctAnswer)} ${cleanText(question)}`;
+
+  const url = `https://api.unsplash.com/photos/random?query=${encodeURIComponent(
+    keyword
+  )}&orientation=landscape&client_id=${unsplashKey}`;
+
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error("Unsplash request failed");
+    }
+
+    const data = await response.json();
+
+    return data?.urls?.regular || "./assets/images/dummy-image.jpg";
+
+  } catch (error) {
+    console.error("Image error:", error);
+
+    return "./assets/images/dummy-image.jpg";
+  }
 };
