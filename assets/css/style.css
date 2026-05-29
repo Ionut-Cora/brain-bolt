@@ -169,6 +169,22 @@ button:hover {
     width: 100%;
 }
 
+.answer-btn {
+    background: #ffffff;
+    color: #000000;
+    text-align: left;
+}
+
+.answer-btn.correct {
+    background: #04AA6D;
+    color: #ffffff;
+}
+
+.answer-btn.wrong {
+    background: #FF0000;
+    color: #ffffff;
+}
+
 /* Feedback Section */
 
 #feedback-section {
