@@ -16,12 +16,16 @@ const questionImage = document.getElementById("question-image");
 const questionText = document.getElementById("question");
 const answersContent = document.getElementById("answers-content");
 const feedbackSection = document.getElementById("feedback-section");
+const feedbackTitle = document.getElementById("feedback-title");
+const feedbackText = document.getElementById("feedback-text");
+const leaderboard = document.getElementById("leaderboard");
 
 let questions = [];
 let currentIndex = 0;
 let score = 0;
 let playerName = "";
 let timer;
+let answered = false;
 
 // Start Quiz
 const startQuiz = async (event) => {
@@ -133,3 +137,56 @@ const getImage = async (question, correctAnswer) => {
     return "./assets/images/dummy-image.jpg";
   }
 };
+
+// Check Answer
+const checkAnswer = (button, selectedAnswer, correctAnswer) => {
+  if (answered) {
+    return;
+  }
+
+  answered = true;
+  clearInterval(timer);
+
+  const buttons = document.querySelectorAll(".answer-btn");
+
+  buttons.forEach((btn) => {
+    btn.disabled = true;
+
+    if (btn.textContent === cleanText(correctAnswer)) {
+      btn.classList.add("correct");
+    }
+  });
+
+  if (selectedAnswer === correctAnswer) {
+    score++;
+    scoreText.textContent = score;
+    feedbackTitle.textContent = "Correct!";
+    feedbackText.textContent = "Well done, that was the right answer.";
+  } else {
+    button.classList.add("wrong");
+    feedbackTitle.textContent = "Incorrect.";
+    feedbackText.textContent = `Correct answer: ${cleanText(correctAnswer)}`;
+  }
+
+  feedbackSection.classList.remove("hidden");
+};
+
+// Show Leaderboard (local storage scores)
+const showLeaderboard = () => {
+  const scores = JSON.parse(localStorage.getItem("simple-quiz-scores")) || [];
+
+  leaderboard.innerHTML = "";
+
+  if (scores.length === 0) {
+    leaderboard.innerHTML = "<li>No scores yet.</li>";
+    return;
+  }
+
+  scores.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name}: ${item.score}/${item.total} - ${item.date}`;
+    leaderboard.appendChild(li);
+  });
+};
+
+showLeaderboard();
