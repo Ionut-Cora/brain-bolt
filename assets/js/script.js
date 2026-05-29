@@ -41,3 +41,18 @@ const startQuiz = async (event) => {
 };
 
 startForm.addEventListener("submit", startQuiz);
+
+// Get Questions (Open Trivia DB API)
+const getQuestions = async (amount, difficulty) => {
+  const url = `https://opentdb.com/api.php?amount=${amount}&category=9&difficulty=${difficulty}&type=multiple`;
+  const response = await fetch(url);
+  const data = await response.json();
+
+      if (response.ok) {
+          console.log(data);
+      } else {
+          throw new Error(data.error);
+      }
+
+  return data.results;
+};
