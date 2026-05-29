@@ -19,6 +19,7 @@ const feedbackSection = document.getElementById("feedback-section");
 const feedbackTitle = document.getElementById("feedback-title");
 const feedbackText = document.getElementById("feedback-text");
 const leaderboard = document.getElementById("leaderboard");
+const timeContent = document.getElementById("time");
 
 let questions = [];
 let currentIndex = 0;
@@ -26,6 +27,7 @@ let score = 0;
 let playerName = "";
 let timer;
 let answered = false;
+let timeLeft = 20;
 
 // Start Quiz
 const startQuiz = async (event) => {
@@ -136,6 +138,22 @@ const getImage = async (question, correctAnswer) => {
 
     return "./assets/images/dummy-image.jpg";
   }
+};
+
+// Start Timer (20 seconds countdown)
+const startTimer = () => {
+  timeLeft = 20;
+  timeContent.textContent = timeLeft;
+
+  timer = setInterval(() => {
+    timeLeft--;
+    timeContent.textContent = timeLeft;
+
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      timeOut();
+    }
+  }, 1000);
 };
 
 // Check Answer
