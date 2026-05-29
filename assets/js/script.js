@@ -20,6 +20,7 @@ const feedbackTitle = document.getElementById("feedback-title");
 const feedbackText = document.getElementById("feedback-text");
 const leaderboard = document.getElementById("leaderboard");
 const timeContent = document.getElementById("time");
+const nextBtn = document.getElementById("next-btn");
 
 let questions = [];
 let currentIndex = 0;
@@ -188,6 +189,14 @@ const checkAnswer = (button, selectedAnswer, correctAnswer) => {
 
   feedbackSection.classList.remove("hidden");
 };
+
+// Next Question
+const nextQuestion = () => {
+  currentIndex++;
+  showQuestion();
+};
+
+nextBtn.addEventListener("click", nextQuestion);
 
 // Show Leaderboard (local storage scores)
 const showLeaderboard = () => {
