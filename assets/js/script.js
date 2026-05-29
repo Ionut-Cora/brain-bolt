@@ -197,3 +197,8 @@ const cleanText = (text) => {
   textarea.innerHTML = text;
   return textarea.value;
 };
+
+// Shuffle
+const shuffle = (array) => {
+  return array.sort(() => Math.random() - 0.5);
+};
