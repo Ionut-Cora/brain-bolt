@@ -190,3 +190,10 @@ const showLeaderboard = () => {
 };
 
 showLeaderboard();
+
+// Clean Text
+const cleanText = (text) => {
+  const textarea = document.createElement("textarea");
+  textarea.innerHTML = text;
+  return textarea.value;
+};
