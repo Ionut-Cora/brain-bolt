@@ -115,6 +115,10 @@ button {
     font: inherit;
 }
 
+#start-form label {
+    text-transform: capitalize;
+}
+
 .btn-div {
     display: flex;
     flex-direction: column;
