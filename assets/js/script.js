@@ -21,6 +21,7 @@ const feedbackText = document.getElementById("feedback-text");
 const leaderboard = document.getElementById("leaderboard");
 const timeContent = document.getElementById("time");
 const nextBtn = document.getElementById("next-btn");
+const resultText = document.getElementById("result-text");
 
 let questions = [];
 let currentIndex = 0;
@@ -40,11 +41,11 @@ const startQuiz = async (event) => {
     return;
   }
 
-  if (unsplashKey === "") {
-    messageText.textContent =
-      "Please add your Unsplash API key in assets/js/app.js.";
-    return;
-  }
+  // if (unsplashKey === "") {
+  //   messageText.textContent =
+  //     "Please add your Unsplash API key in assets/js/app.js.";
+  //   return;
+  // }
 
   messageText.textContent = "Loading questions...";
   const amount = questionCountSelect.value;
@@ -69,11 +70,11 @@ const getQuestions = async (amount, difficulty) => {
   const response = await fetch(url);
   const data = await response.json();
 
-      if (response.ok) {
-          console.log(data);
-      } else {
-          throw new Error(data.error);
-      }
+      // if (response.ok) {
+      //     console.log(data);
+      // } else {
+      //     throw new Error(data.error);
+      // }
 
   return data.results;
 };
@@ -197,6 +198,19 @@ const nextQuestion = () => {
 };
 
 nextBtn.addEventListener("click", nextQuestion);
+
+// End Quiz
+const endQuiz = () => {
+  clearInterval(timer);
+
+  quizSection.classList.add("hidden");
+  resultSection.classList.remove("hidden");
+
+  resultText.textContent = `${playerName}, you scored ${score}/${questions.length}.`;
+
+  saveScore();
+  showLeaderboard();
+};
 
 // Show Leaderboard (local storage scores)
 const showLeaderboard = () => {
