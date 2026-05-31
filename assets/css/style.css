@@ -117,6 +117,7 @@ button {
 
 #start-form label {
     text-transform: capitalize;
+    font-weight: bold;
 }
 
 .btn-div {
