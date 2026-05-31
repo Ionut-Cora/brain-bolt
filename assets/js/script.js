@@ -22,6 +22,7 @@ const leaderboard = document.getElementById("leaderboard");
 const timeContent = document.getElementById("time");
 const nextBtn = document.getElementById("next-btn");
 const resultText = document.getElementById("result-text");
+const restartBtn = document.getElementById("restart-btn");
 
 let questions = [];
 let currentIndex = 0;
@@ -211,6 +212,15 @@ const endQuiz = () => {
   saveScore();
   showLeaderboard();
 };
+
+// Restart Quiz
+const restartQuiz = () => {
+  resultSection.classList.add("hidden");
+  startSection.classList.remove("hidden");
+  messageText.textContent = "";
+};
+
+restartBtn.addEventListener("click", restartQuiz);
 
 // Save Score (top 20 scores saves in local storage)
 const saveScore = () => {
