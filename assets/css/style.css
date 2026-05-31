@@ -173,6 +173,14 @@ button:hover {
     width: 100%;
 }
 
+#time-paragraph {
+    background-color: #e79638;
+    color: #000000;
+    padding: 2px 7px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
 .answer-btn {
     background: #ffffff;
     color: #000000;
