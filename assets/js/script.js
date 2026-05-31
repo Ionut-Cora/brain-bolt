@@ -212,6 +212,25 @@ const endQuiz = () => {
   showLeaderboard();
 };
 
+// Save Score (top 20 scores saves in local storage)
+const saveScore = () => {
+  const scores = JSON.parse(localStorage.getItem("simple-quiz-scores")) || [];
+
+  scores.push({
+    name: playerName,
+    score: score,
+    total: questions.length,
+    date: new Date().toLocaleDateString(),
+  });
+
+  scores.sort((a, b) => b.score - a.score);
+
+  localStorage.setItem(
+    "simple-quiz-scores",
+    JSON.stringify(scores.slice(0, 20)),
+  );
+};
+
 // Show Leaderboard (local storage scores)
 const showLeaderboard = () => {
   const scores = JSON.parse(localStorage.getItem("simple-quiz-scores")) || [];
