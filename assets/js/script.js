@@ -159,6 +159,29 @@ const startTimer = () => {
   }, 1000);
 };
 
+// Time Out (when the time is go from 20 to 0, it runs)
+const timeOut = () => {
+  if (answered) {
+    return;
+  }
+
+  answered = true;
+  const item = questions[currentIndex];
+  const buttons = document.querySelectorAll(".answer-btn");
+
+  buttons.forEach((button) => {
+    button.disabled = true;
+
+    if (button.textContent === cleanText(item.correct_answer)) {
+      button.classList.add("correct");
+    }
+  });
+
+  feedbackTitle.textContent = "Time is up!";
+  feedbackText.textContent = `Correct answer: ${cleanText(item.correct_answer)}`;
+  feedbackSection.classList.remove("hidden");
+};
+
 // Check Answer
 const checkAnswer = (button, selectedAnswer, correctAnswer) => {
   if (answered) {
