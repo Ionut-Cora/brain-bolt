@@ -23,6 +23,7 @@ const timeContent = document.getElementById("time");
 const nextBtn = document.getElementById("next-btn");
 const resultText = document.getElementById("result-text");
 const restartBtn = document.getElementById("restart-btn");
+const clearBtn = document.getElementById("clear-btn");
 
 let questions = [];
 let currentIndex = 0;
@@ -283,6 +284,14 @@ const showLeaderboard = () => {
 };
 
 showLeaderboard();
+
+// Clear Score
+const clearScores = () => {
+  localStorage.removeItem("simple-quiz-scores");
+  showLeaderboard();
+};
+
+clearBtn.addEventListener("click", clearScores);
 
 // Clean Text
 const cleanText = (text) => {
