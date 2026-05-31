@@ -209,6 +209,10 @@ button:hover {
     border-radius: 1rem;
 }
 
+#feedback-text {
+    margin-bottom: 2rem;
+}
+
 .hidden {
     display: none;
 }
