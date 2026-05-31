@@ -120,6 +120,11 @@ button {
     font-weight: bold;
 }
 
+#player-name,
+#question-count {
+    margin-bottom: 1rem;
+}
+
 .btn-div {
     display: flex;
     flex-direction: column;
