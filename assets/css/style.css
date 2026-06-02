@@ -85,6 +85,7 @@ footer p {
     padding: 3rem;
     border-radius: 1rem;
     box-shadow: 0 4px 16px #11111a1a, 0 8px 32px #11111a0d;
+    overflow: hidden;
 }
 
 .card::before {
@@ -215,6 +216,20 @@ button:hover {
 
 #feedback-text {
     margin-bottom: 2rem;
+}
+
+/* Leaderboard Section */
+
+#leaderboard {
+    width: 100%;
+    padding-left: 1.5rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+#leaderboard li {
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
 }
 
 .hidden {
