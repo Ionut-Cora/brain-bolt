@@ -257,6 +257,10 @@ button:hover {
 }
 
 @media screen and (max-width: 650px) {
+    .card {
+        padding: 2rem;
+    }
+
     .quiz-info {
         display: block;
     }
