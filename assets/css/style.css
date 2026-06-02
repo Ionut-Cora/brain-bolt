@@ -260,4 +260,8 @@ button:hover {
     .quiz-info {
         display: block;
     }
+
+    #time-paragraph {
+        margin-top: 10px;
+    }
 }
