@@ -49,6 +49,10 @@ h2 {
     align-items: center;
 }
 
+.logo-div a {
+    text-decoration: none;
+}
+
 .logo-div i {
     margin-right: 0.5rem;
     color: #e79638;
