@@ -143,6 +143,16 @@ button {
     cursor: pointer;
     border: none;
     padding: 0.5rem 1rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+button,
+button:visited,
+button:hover,
+button:focus,
+button:active {
+    color: #000000;
 }
 
 button:hover {
