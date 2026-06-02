@@ -38,16 +38,18 @@ const startQuiz = async (event) => {
   event.preventDefault();
   playerName = playerNameInput.value.trim();
 
-  if (playerName.length < 1) {
-    messageText.textContent = "Please enter at least 1 characters for your name.";
+  // Allow only letters and spaces
+  const namePattern = /^[A-Za-z\s]+$/;
+
+  if (playerName.length < 2) {
+    messageText.textContent = "Please enter at least 2 characters.";
     return;
   }
 
-  // if (unsplashKey === "") {
-  //   messageText.textContent =
-  //     "Please add your Unsplash API key in assets/js/app.js.";
-  //   return;
-  // }
+  if (!namePattern.test(playerName)) {
+    messageText.textContent = "Name can only contain letters and spaces.";
+    return;
+  }
 
   messageText.textContent = "Loading questions...";
   const amount = questionCountSelect.value;
@@ -72,11 +74,11 @@ const getQuestions = async (amount, difficulty) => {
   const response = await fetch(url);
   const data = await response.json();
 
-      // if (response.ok) {
-      //     console.log(data);
-      // } else {
-      //     throw new Error(data.error);
-      // }
+  // if (response.ok) {
+  //     console.log(data);
+  // } else {
+  //     throw new Error(data.error);
+  // }
 
   return data.results;
 };
@@ -123,7 +125,7 @@ const getImage = async (question, correctAnswer) => {
   const keyword = `${cleanText(correctAnswer)} ${cleanText(question)}`;
 
   const url = `https://api.unsplash.com/photos/random?query=${encodeURIComponent(
-    keyword
+    keyword,
   )}&orientation=landscape&client_id=${unsplashKey}`;
 
   try {
@@ -136,7 +138,6 @@ const getImage = async (question, correctAnswer) => {
     const data = await response.json();
 
     return data?.urls?.regular || "./assets/images/dummy-image.jpg";
-
   } catch (error) {
     console.error("Image error:", error);
 
