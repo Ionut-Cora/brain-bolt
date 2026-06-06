@@ -137,11 +137,11 @@ const getImage = async (question, correctAnswer) => {
 
     const data = await response.json();
 
-    return data?.urls?.regular || "./assets/images/dummy-image.jpg";
+    return data?.urls?.regular || "./assets/images/dummy-image.webp";
   } catch (error) {
     console.error("Image error:", error);
 
-    return "./assets/images/dummy-image.jpg";
+    return "./assets/images/dummy-image.webp";
   }
 };
 
