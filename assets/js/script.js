@@ -145,6 +145,17 @@ const getImage = async (question, correctAnswer) => {
   }
 };
 
+// Update the question image alternative text
+function updateQuestionImage(question) {
+  if (question.image) {
+    questionImage.src = question.image;
+    questionImage.alt = question.imageDescription || "";
+    questionImage.style.display = "block";
+  } else {
+    questionImage.style.display = "none";
+  }
+}
+
 // Start Timer (20 seconds countdown)
 const startTimer = () => {
   timeLeft = 20;
