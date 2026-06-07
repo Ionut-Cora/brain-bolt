@@ -28,7 +28,9 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    background-image: url(../images/background-image.webp);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.25))), url(../images/background-image.webp);
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(../images/background-image.webp);
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(../images/background-image.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
