@@ -2,6 +2,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Variables */
+
+:root {
+    /* Base */
+    --colour-black: #000000;
+    --colour-white: #ffffff;
+
+    /* Brand */
+    --colour-primary: #e79638;
+
+    /* Semantic */
+    --colour-success: #04AA6D;
+    --colour-error: #FF0000;
+}
+
 /* Global styles */
 
 * {
@@ -70,7 +85,7 @@ footer {
 header span,
 header p,
 footer p {
-    color: #ffffff;
+    color: var(--colour-white);
 }
 
 /* Card */
@@ -81,7 +96,7 @@ footer p {
     flex-direction: column;
     align-items: center;
     background-color: #000000d0;
-    color: #ffffff;
+    color: var(--colour-white);
     margin: 1rem 0;
     padding: 3rem;
     border-radius: 1rem;
@@ -139,7 +154,7 @@ button {
 }
 
 button {
-    background: #e79638;
+    background: var(--colour-primary);
     font-weight: bold;
     cursor: pointer;
     border: none;
@@ -153,7 +168,7 @@ button:visited,
 button:hover,
 button:focus,
 button:active {
-    color: #000000;
+    color: var(--colour-black);
 }
 
 button:hover {
@@ -163,7 +178,7 @@ button:hover {
 /* Message Text */
 
 #message-text {
-    color: #e79638;
+    color: var(--colour-primary);
     font-weight: bold;
     text-align: center;
     margin-top: 2rem;
@@ -183,7 +198,7 @@ button:hover {
     object-fit: cover;
     border-radius: 1rem;
     margin: 1rem 0;
-    background: #ffffff;
+    background: var(--colour-white);
 }
 
 #answers-content {
@@ -195,27 +210,27 @@ button:hover {
 }
 
 #time-paragraph {
-    background-color: #e79638;
-    color: #000000;
+    background-color: var(--colour-primary);
+    color: var(--colour-black);
     padding: 2px 7px;
     border-radius: 7px;
     font-weight: bold;
 }
 
 .answer-btn {
-    background: #ffffff;
-    color: #000000;
+    background: var(--colour-white);
+    color: var(--colour-black);
     text-align: left;
 }
 
 .answer-btn.correct {
-    background: #04AA6D;
-    color: #ffffff;
+    background: var(--colour-success);
+    color: var(--colour-white);
 }
 
 .answer-btn.wrong {
-    background: #FF0000;
-    color: #ffffff;
+    background: var(--colour-error);
+    color: var(--colour-white);
 }
 
 /* Feedback Section */
