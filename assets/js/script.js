@@ -146,7 +146,7 @@ const getImage = async (question, correctAnswer) => {
 };
 
 // Update the question image alternative text
-const updateQuestionImage = (question) => {
+(function (question) {
   if (question.image) {
     questionImage.src = question.image;
     questionImage.alt = question.imageDescription || "";
@@ -154,7 +154,7 @@ const updateQuestionImage = (question) => {
   } else {
     questionImage.style.display = "none";
   }
-}
+});
 
 // Start Timer (20 seconds countdown)
 const startTimer = () => {
