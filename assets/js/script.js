@@ -146,7 +146,7 @@ const getImage = async (question, correctAnswer) => {
 };
 
 // Update the question image alternative text
-function updateQuestionImage(question) {
+const updateQuestionImage = (question) => {
   if (question.image) {
     questionImage.src = question.image;
     questionImage.alt = question.imageDescription || "";
