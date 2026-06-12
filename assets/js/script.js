@@ -74,12 +74,6 @@ const getQuestions = async (amount, difficulty) => {
   const response = await fetch(url);
   const data = await response.json();
 
-  // if (response.ok) {
-  //     console.log(data);
-  // } else {
-  //     throw new Error(data.error);
-  // }
-
   return data.results;
 };
 
