@@ -117,27 +117,17 @@ const showQuestion = async () => {
 
 // Get Image (Unsplash API)
 const getImage = async (question, correctAnswer) => {
-  const keyword = `${cleanText(correctAnswer)} ${cleanText(question)}`;
+  const fallbackImage = "./assets/images/dummy-image.webp";
+  const keyword = cleanText(correctAnswer);
+  const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(keyword)}&per_page=1&orientation=landscape&client_id=${unsplashKey}`;
+  const response = await fetch(url);
+  const data = await response.json();
 
-  const url = `https://api.unsplash.com/photos/random?query=${encodeURIComponent(
-    keyword,
-  )}&orientation=landscape&client_id=${unsplashKey}`;
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error("Unsplash request failed");
-    }
-
-    const data = await response.json();
-
-    return data?.urls?.regular || "./assets/images/dummy-image.webp";
-  } catch (error) {
-    console.error("Image error:", error);
-
-    return "./assets/images/dummy-image.webp";
+  if (data.results.length === 0) {
+    return fallbackImage;
   }
+
+  return data.results[0].urls.regular;
 };
 
 // Update the question image alternative text
