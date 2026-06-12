@@ -1,3 +1,5 @@
+/* jshint esversion: 11 */
+
 // Game Variables
 const unsplashKey = "kmUnvx5aKXe0KanJb7OVWQrdXu3iEF94T_NUMa-3kzY";
 
@@ -44,6 +46,11 @@ const startQuiz = async (event) => {
 
   if (playerName.length < 2) {
     messageText.textContent = "Please enter at least 2 characters.";
+    return;
+  }
+
+  if (playerName.length > 50) {
+    messageText.textContent = "Name cannot exceed 50 characters.";
     return;
   }
 
