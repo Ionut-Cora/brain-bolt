@@ -24,6 +24,7 @@ const nextBtn = document.getElementById("next-btn");
 const resultText = document.getElementById("result-text");
 const restartBtn = document.getElementById("restart-btn");
 const clearBtn = document.getElementById("clear-btn");
+const currentYear = document.getElementById("current-year");
 
 let questions = [];
 let currentIndex = 0;
@@ -310,3 +311,6 @@ const cleanText = (text) => {
 const shuffle = (array) => {
   return array.sort(() => Math.random() - 0.5);
 };
+
+// Dynamically update footer year
+currentYear.textContent = new Date().getFullYear();
